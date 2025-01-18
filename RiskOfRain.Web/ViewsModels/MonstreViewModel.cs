@@ -1,11 +1,12 @@
-namespace RiskOfRain.Web.Models;
+namespace RiskOfRain.Web.ViewsModels;
 
-public class Monstre
+
+public class MonstreViewModel
 {
     public string? NomMonstre { get; set; }
     public int HpMonstre { get; set; }
     public string ImageUrl { get; set; }
-    public Monstre(int hp, string nom, string imageUrl)
+    public MonstreViewModel(int hp, string nom, string imageUrl)
     {
         ImageUrl = imageUrl;
         NomMonstre = nom;

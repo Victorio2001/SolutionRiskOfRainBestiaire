@@ -1,7 +1,7 @@
-﻿@model List<Monstre>
+﻿@model RiskOfRain.Web.ViewsModels.MonstreIndexViewModel
 
 @{
-    ViewData["Title"] = ViewBag.Title;
+    ViewData["Title"] = Model.pageTitle;
 }
 
 <div class="container mt-5">
@@ -14,7 +14,7 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model) {
+        @foreach (var item in Model.Monstres) {
             <tr>
                 <td>
                     @item.NomMonstre

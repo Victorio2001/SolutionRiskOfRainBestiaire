@@ -1,8 +1,33 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model List<Monstre>
+
+@{
+    ViewData["Title"] = ViewBag.Title;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container mt-5">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Nom du Monstre</th>
+            <th scope="col">PV du Monstre</th>
+            <th scope="col">Image: </th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @item.NomMonstre
+                </td>
+                <td>
+                    @item.HpMonstre
+                </td>
+                <td>
+                    <img style="height: 100px; width: 100px;" src="@item.ImageUrl" alt="..." class="img-thumbnail">
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
 </div>
+

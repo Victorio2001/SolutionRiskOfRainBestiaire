@@ -15,14 +15,17 @@ public class HomeController : Controller
     
     public IActionResult Index()
     {
-        //! Option numéro un pour passer de laaa data à ta page -- ps: c'est null de faire sa
-        var Monstre = new List<Monstre>();
-        Monstre.Add(new Monstre(100, "Alloy Vulture", "http://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/c/c4/Alloy_Vulture_-_Logbook_Model.jpg/revision/latest?cb=20200909171033"));
-        Monstre.Add(new Monstre(140, " Alpha Construct", "https://steamuserimages-a.akamaihd.net/ugc/1862807714340081871/3F64947FBEF6A107335F723A471C97D92484428A/"));
+        //! utilisation de nôtre objet Monstre
+        var MonstreList = new List<Monstre>();
+        //! Ajout dans la list "Monstre" d'objet Monstre
+        MonstreList.Add(new Monstre(100, "Alloy Vulture", "http://static.wikia.nocookie.net/riskofrain2_gamepedia_en/images/c/c4/Alloy_Vulture_-_Logbook_Model.jpg/revision/latest?cb=20200909171033"));
+        MonstreList.Add(new Monstre(140, " Alpha Construct", "https://steamuserimages-a.akamaihd.net/ugc/1862807714340081871/3F64947FBEF6A107335F723A471C97D92484428A/"));
+        
+        //? un View Bag c'est genre un gros sac / un fourtout c'est vraiment pas très propre d'utiliser ceci
         ViewBag.Title = "Bestiaire RiskOfRain";
-        ViewBag.Monstre = Monstre;
+        ViewBag.Monstre = MonstreList;
    
-        return View(Monstre);
+        return View(MonstreList);
     }
 
     public IActionResult Privacy()

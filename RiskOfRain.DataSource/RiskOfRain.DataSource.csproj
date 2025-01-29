@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\RiskOfRain.DataContext\RiskOfRain.DataContext.csproj" />
+      <ProjectReference Include="..\RiskOfRain.Model\RiskOfRain.Model.csproj" />
+    </ItemGroup>
+
 </Project>

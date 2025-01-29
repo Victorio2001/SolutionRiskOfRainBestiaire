@@ -19,4 +19,10 @@
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.11"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\RiskOfRain.DataContext\RiskOfRain.DataContext.csproj" />
+      <ProjectReference Include="..\RiskOfRain.DataSource\RiskOfRain.DataSource.csproj" />
+      <ProjectReference Include="..\RiskOfRain.Model\RiskOfRain.Model.csproj" />
+    </ItemGroup>
+
 </Project>

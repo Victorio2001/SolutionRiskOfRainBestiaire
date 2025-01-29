@@ -15,16 +15,12 @@ namespace RiskOfRain.DataContext
             var configuration = configurationBuilder.Build();
 
             
-            
-            
             //! Création du contexte en lui passabt la configuration
             DbContextOptionsBuilder<RiskOfRainContext> builder = new DbContextOptionsBuilder<RiskOfRainContext>();
-
-            
             
             
             //! Récupération de la chaine de configuration dans le fichier de configuration
-            builder.UseSqlServer(configuration.GetConnectionString("SolutionDaisyKorpContext"));
+            builder.UseSqlServer(configuration.GetConnectionString("RiskOfRainContext"));
             
             return new RiskOfRainContext(builder.Options);
         }

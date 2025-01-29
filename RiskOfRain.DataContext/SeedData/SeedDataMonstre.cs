@@ -16,7 +16,8 @@ public static class SeedDataMonstre
                 NomMonstre = "Alpha Construct",
                 PointCombatMonstre = 55,
                 CouleurMonstre = "Rouge",
-                PvMonstre = 125,
+                PvMonstre = 100,
+                PvMaxMonstre = 125,
                 TypeMonstre = "Mutant",
             },
             new Monstre()
@@ -26,6 +27,7 @@ public static class SeedDataMonstre
                 PointCombatMonstre = 120,
                 CouleurMonstre = "Bleu",
                 PvMonstre = 180,
+                PvMaxMonstre = 180,
                 TypeMonstre = "Mage",
             }
            

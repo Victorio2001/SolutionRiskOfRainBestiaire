@@ -1,5 +1,6 @@
-﻿@model RiskOfRain.Web.ViewsModels.MonstreIndexViewModel
-
+﻿@using Microsoft.EntityFrameworkCore
+@model RiskOfRain.Web.ViewsModels.MonstreIndexViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     ViewData["Title"] = Model.pageTitle;
 }
@@ -8,43 +9,27 @@
     <div class="container py-5">
         <div class="row mb-5">
             <div class="col-md-8 col-xl-6 text-center mx-auto">
-                <h2 class="fw-bold">Heading</h2>
-                <p class="text-muted">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+                <h2 class="fw-bold display-2">Bestiaire</h2>
+                <p class="text-muted display-7">Retrouvez ici tout les monstres classifié dans notre bdd.</p>
+                <a asp-controller="Home" asp-action="Create" class="btn btn-dark text-white btn-outline-white">Ajouter Monstre</a>
             </div>
         </div>
+        
         <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px;">
-            <div class="col mb-4">
-                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="products/1.jpg" style="height: 250px;" /></a>
-                    <div class="py-4"><span class="badge bg-primary mb-2">Website</span>
-                        <h4 class="fw-bold">Lorem libero donec</h4>
-                        <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+            @foreach(var item in Model.Monstres)
+            {
+                <div class="col mb-4" style="">
+                    <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="https://cosplaycart.de/cdn/shop/products/60021-cosplaystyle2014.jpg?v=1649843396" style="height: 250px;"/></a>
+                        <div class="py-4"><span class="badge bg-primary mb-2">@item.TypeMonstre</span>
+                            <h4 class="fw-bold">@item.NomMonstre</h4>
+                            <p class="text-muted">Point de vie: @item.PvMonstre/@item.PvMaxMonstre</p>
+                            <a asp-controller="Home" asp-action="" class="link-secondary">Voire détails du monstre</a>
+                            <a asp-controller="Home" asp-action="DeleteMonster" asp-route-id="@item.IdMonstre" class="link-danger">Supprimer Monstre</a>
+                            <a asp-controller="Home" asp-action="Edit" asp-route-id="@item.IdMonstre" class="link-info">Modifier Monstre</a>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="products/2.jpg" style="height: 250px;" /></a>
-                    <div class="py-4"><span class="badge bg-primary mb-2">Website</span>
-                        <h4 class="fw-bold">Lorem libero donec</h4>
-                        <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="products/3.jpg" style="height: 250px;" /></a>
-                    <div class="py-4"><span class="badge bg-primary mb-2">Website</span>
-                        <h4 class="fw-bold">Lorem libero donec</h4>
-                        <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div><a href="#"><img class="rounded img-fluid shadow w-100 fit-cover" src="products/1.jpg" style="height: 250px;" /></a>
-                    <div class="py-4"><span class="badge bg-primary mb-2">Website</span>
-                        <h4 class="fw-bold">Lorem libero donec</h4>
-                        <p class="text-muted">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                    </div>
-                </div>
-            </div>
+                </div> 
+            }
         </div>
     </div>
 </section>

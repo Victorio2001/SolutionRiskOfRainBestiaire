@@ -1,0 +1,59 @@
+@model RiskOfRain.Web.ViewsModels.MonstreEditViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = Model.pageTitle;
+}
+
+<div class="container mt-5">
+
+    <div class="mt-4">
+        <a asp-action="Index" class="btn btn-dark text-white">
+            <i class="bi bi-arrow-left-short"></i> Retour
+        </a>
+    </div>
+
+
+    <div class="card-body">
+        <form asp-action="EditMonster" method="post">
+            @Html.AntiForgeryToken()
+            <div asp-validation-summary="All"></div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3"><label asp-for="Monstres.NomMonstre"></label>
+                        <input asp-for="Monstres.NomMonstre" type="" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3"><label asp-for="Monstres.CouleurMonstre"></label>
+                        <input asp-for="Monstres.CouleurMonstre" type="" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3"><label class="form-label" asp-for="Monstres.PvMonstre"></label>
+                        <input asp-for="Monstres.PvMonstre" type="number" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3"><label class="form-label" asp-for="Monstres.PvMaxMonstre"></label>
+                        <input asp-for="Monstres.PvMaxMonstre" type="number" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3"><label class="form-label" asp-for="Monstres.TypeMonstre"></label>
+                        <input asp-for="Monstres.TypeMonstre" type="" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="mb-3"><label class="form-label" asp-for="Monstres.PointCombatMonstre"></label>
+                        <input asp-for="Monstres.PointCombatMonstre" type="number" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3"><button name="submit" type="submit" class="btn btn-dark">Modifier Monstre</button></div>
+        </form>
+    </div>
+</div>

@@ -1,12 +1,14 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using RiskOfRain.DataContext.EntityTypesConfiguration;
 using RiskOfRain.DataContext.SeedData;
 using RiskOfRain.Model;
+using RiskOfRain.Model.Identity;
 
 
 namespace RiskOfRain.DataContext
 {
-    public class RiskOfRainContext : DbContext
+    public class RiskOfRainContext : IdentityDbContext<User>
     {
         protected RiskOfRainContext()
         {

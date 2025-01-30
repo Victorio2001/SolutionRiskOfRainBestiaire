@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RiskOfRain.DataContext;
 
@@ -11,9 +12,11 @@ using RiskOfRain.DataContext;
 namespace RiskOfRain.DataContext.Migrations
 {
     [DbContext(typeof(RiskOfRainContext))]
-    partial class RiskOfRainContextModelSnapshot : ModelSnapshot
+    [Migration("20250130190921_AspNetIdentity")]
+    partial class AspNetIdentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

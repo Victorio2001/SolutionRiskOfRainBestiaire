@@ -1,5 +1,6 @@
-﻿namespace RiskOfRain.DataSource;
+namespace RiskOfRain.DataSource;
 
 public class Class1
 {
+    
 }

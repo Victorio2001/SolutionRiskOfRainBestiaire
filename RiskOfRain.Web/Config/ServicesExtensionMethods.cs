@@ -1,9 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using RiskOfRain.DataContext;
+using RiskOfRain.DataSource;
 using RiskOfRain.DataSource.interfaces;
 using RiskOfRain.DataSource.repository;
 using RiskOfRain.Model.Identity;
+using RiskOfRain.Sender;
+using RiskOfRain.Sender.Interfaces;
 
 namespace RiskOfRain.Web.Config;
 
@@ -33,6 +36,13 @@ public static class ServicesExtensionMethods
         }).AddIdentityCookies(e => { });
             
         
+        // Injection de la configuration
+
+        // Injection de l'interface et du service
+        services.AddScoped<IMailSender, MailSender>();
+        services.AddScoped<SignInDataSource>();
+        services.AddScoped<UserDataSource>();
+        return services;
         
         
             

@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskOfRain.DataSource", "Ri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskOfRain.DataContext", "RiskOfRain.DataContext\RiskOfRain.DataContext.csproj", "{8CE49664-506F-4362-93B6-79B7D10FA27F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RiskOfRain.Sender", "RiskOfRain.Sender\RiskOfRain.Sender.csproj", "{02172AC1-1714-4413-B40B-06BB72FC871E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{8CE49664-506F-4362-93B6-79B7D10FA27F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8CE49664-506F-4362-93B6-79B7D10FA27F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8CE49664-506F-4362-93B6-79B7D10FA27F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02172AC1-1714-4413-B40B-06BB72FC871E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02172AC1-1714-4413-B40B-06BB72FC871E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02172AC1-1714-4413-B40B-06BB72FC871E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02172AC1-1714-4413-B40B-06BB72FC871E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

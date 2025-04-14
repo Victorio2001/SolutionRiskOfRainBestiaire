@@ -21,6 +21,7 @@ public static class ServicesExtensionMethods
         {
             options.UseSqlServer(connectionString);
         });
+         
         
         
         services.AddIdentityCore<User>()
